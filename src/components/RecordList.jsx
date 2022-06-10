@@ -15,7 +15,7 @@ export default function RecordList() {
                 <h3>Records</h3>
             </Header>   
             <Main>
-                {records.map((record, ind) => <Record title={record.title} key={ind} id={record._id}/>)}
+                {records.map((record, ind) => <Record title={record.title} key={record._id} id={record._id}/>)}
             </Main>
         </Pane>
     )
