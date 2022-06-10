@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useStore from "./store.js";
 
 import "./App.css";
 
@@ -9,17 +10,8 @@ import RecordList from "./components/RecordList";
 // import useLocalStorage from './hooks/localstorage';
 
 function App() {
-    const [records, setRecords] = useState([
-        {
-            _id: "1",
-            title: "title",
-            text: "hello guys, i am aditya, your best friend, please hangout with me at facebook live",
-        },
-    ]);
-    const [tokenData, setTokenData] = useState({
-        person: ["aditya", "friend"],
-        org: ["facebook"],
-    });
+    const records = useStore(state => state.records); 
+    const tokenData = useStore(state => state.tokenData);
 
     return (
         <div className="App">
