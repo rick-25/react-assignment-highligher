@@ -6,16 +6,14 @@ import Pane from './shared/Pane';
 import Main from './shared/Main';
 import Record from './Record';
 
-export default function RecordList() {
-    const titles = ['asss', 'sfadfa', 'adfadfa', 'a', 'b', 'b', 'w', 's'];
-    
+export default function RecordList({ records }) {
     return (
         <Pane flex={"25%"}>
             <Header justify="center">
                 <h3>Records</h3>
             </Header>   
             <Main>
-                {titles.map((_, ind) => <Record title={_} key={ind}/>)}
+                {records.map((record, ind) => <Record title={record.title} key={ind}/>)}
             </Main>
         </Pane>
     )

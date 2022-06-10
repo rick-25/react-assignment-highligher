@@ -10,7 +10,7 @@ import Highlighter from "react-highlight-words";
 
 import Highlight from "./Highlight";
 
-function AnotationWindow() {
+function AnotationWindow({ record , words}) {
   return (
     <Pane flex={"50%"}>
       <Header justify="flex-start">
@@ -23,14 +23,14 @@ function AnotationWindow() {
             textAlign: "justify",
             margin: "20px",
             fontSize: "1.2rem",
-            lineHeight: "1.5",
+            lineHeight: "2",
           }}
         >
           <Highlighter
             // highlightClassName="YourHighlightClass"
-            searchWords={["and", "or", "the"]}
+            searchWords={words}
             autoEscape={true}
-            textToHighlight="The dog is chasing the cat. Or perhaps they're just playing?"
+            textToHighlight={record.text}
             highlightTag={Highlight}
           />
         </p>
