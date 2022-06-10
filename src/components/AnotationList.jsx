@@ -1,4 +1,5 @@
 import React from "react";
+import useStore from "../store.js";
 
 import extractAnotations from "../utils/extractAnotaions.js";
 
@@ -7,8 +8,12 @@ import Header from "./shared/Header";
 import Main from "./shared/Main";
 import Pane from "./shared/Pane";
 
-export default function AnotationList({ record, tokenData }) {
+export default function AnotationList() {
+    const record = useStore(state => state.selectedRecord);
+    const tokenData = useStore(state => state.tokenData);
+
     const anotations = extractAnotations(record.text, tokenData);
+    
     return (
         <Pane flex="25%">
             <Header justify="center">

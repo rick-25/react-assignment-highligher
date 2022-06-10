@@ -16,11 +16,8 @@ function App() {
     return (
         <div className="App">
             <div className="container">
-                <RecordList records={records} />
-                <AnotationWindow
-                    record={records[0]}
-                    words={[...tokenData.person, ...tokenData.org]}
-                />
+                <RecordList />
+                <AnotationWindow />
                 <AnotationList record={records[0]} tokenData={tokenData} />
             </div>
         </div>

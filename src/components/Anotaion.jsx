@@ -1,6 +1,8 @@
 import React from "react";
+import useStore from "../store";
 
-export default function Anotaion({ text, type }) {  
+export default function Anotaion({ text, type , index}) {  
+    const removeAnotation = useStore(state => state.removeAnotation);
   return (
     <div
       className="anotaion"
@@ -15,7 +17,7 @@ export default function Anotaion({ text, type }) {
       <span>
         <b>{type}</b>
       </span>
-      <button style={{ color: "blue" }}>X</button>
+      <button style={{ color: "blue" }} onClick={e => removeAnotation(index, text)}>X</button>
     </div>
   );
 }
